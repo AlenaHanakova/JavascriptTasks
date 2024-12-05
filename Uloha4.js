@@ -1,4 +1,4 @@
-selectionSort(array){
+function selectionSort(array){
     if (array.length <= 1) return array;
     let iMin;
     for (let i = 0; i < array.length-1 /1; i++) {
@@ -12,11 +12,11 @@ selectionSort(array){
     return array;
 }
 
-// bubbleSort(array){
+// function bubbleSort(array){
 
 // }
 
-// mergeSort(array){
+// function mergeSort(array){
 
 // }
 

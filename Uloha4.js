@@ -24,19 +24,16 @@ function bubbleSort(array) {
 }
 
 function mergeSort(array) {
-    console.log(`mergesort ${array} length: ${array.length} `);
     if (array.length <= 1) return array;
-    console.log(`length > 1 ${array}`);
     let halfIndex = Math.round(array.length / 2);
     return merge(mergeSort(array.slice(0, halfIndex)), mergeSort(array.slice(halfIndex, array.length)));
 }
 
 function merge(array1, array2) {
-    console.log(`merge ${array1} , ${array2}`);
     let result = [];
     let i1 = 0;
     let i2 = 0;
-    while (i1 < array1.lenght && i2 < array2.lenght) {
+    while (i1 < array1.length && i2 < array2.length) {
         if (array1[i1] < array2[i2]) {
             result.push(array1[i1]);
             i1++;
@@ -45,10 +42,10 @@ function merge(array1, array2) {
             i2++;
         }
     }
-    if (i1 < array1.length - 1) {
-        result += array1.slice(i1, array1.lenght);
+    if (i1 < array1.length) {
+        result = result.concat(array1.slice(i1, array1.length));
     } else {
-        result += array2.slice(i2, array2.lenght);
+        result = result.concat(array2.slice(i2, array2.length));
     }
     return result;
 }
@@ -59,4 +56,4 @@ console.log(`selectionSort ${selectionSort(testArray)}`);
 testArray = [3, 6, 2, 1, 7, 9, 8, 5, 4, 1];
 console.log(`bubbleSort ${bubbleSort(testArray)}`);
 testArray = [3, 6, 2, 1, 7, 9, 8, 5, 4, 1];
-console.log(`******mergeSort ${mergeSort(testArray)}`);
+console.log(`mergeSort ${mergeSort(testArray)}`);

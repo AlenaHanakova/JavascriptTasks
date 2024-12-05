@@ -3,12 +3,12 @@ function validateEmail(email) {
     return emailPattern.test(email);
 }
 
-function replaceAt(email){
+function replaceAt(email) {
     return email.replace(/\[at\]/gm, "@");
 }
 
 
-let testEmail="abcd[at]nada.com";
+let testEmail = "abcd[at]nada.com";
 console.log(replaceAt(testEmail));
 console.log(validateEmail(testEmail));
 console.log(validateEmail(replaceAt(testEmail)));

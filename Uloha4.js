@@ -1,20 +1,27 @@
 function selectionSort(array){
-    if (array.length <= 1) return array;
     let iMin;
     for (let i = 0; i < array.length-1 /1; i++) {
         iMin=array[i];
-        for (let j = i; j < array.length; j++) {
+        for (let j = i+1; j < array.length; j++) {
             if(array[j] < iMin) iMin=j;
         }
-        if (i!=iMin)      
-        [array[i], array[iMin]] = [array[iMin], array[i]];
-        }      
+        (i!=iMin) && swapTwoElementsInArray(array, i, iMin);  
+    }       
     return array;
 }
 
-// function bubbleSort(array){
+function swapTwoElementsInArray(array, i1, i2){
+    [array[i1], array[i2]] = [array[i2], array[i1]];
+}
 
-// }
+function bubbleSort(array){
+    for (let i = 0; i < array.length - 1; i++) {
+        for (let j = i+1; j < array.length; j++) {
+            (array[i] > array[j]) && swapTwoElementsInArray(array, i, j);
+        }        
+    }
+    return array;
+}
 
 // function mergeSort(array){
 
@@ -22,4 +29,6 @@ function selectionSort(array){
 
 
 testArray = [3,6,2,1,7,9,8,5,4,1];
-console.log(selectionSort(testArray));
+console.log(`selectionSort ${selectionSort(testArray)}`);
+testArray = [3,6,2,1,7,9,8,5,4,1];
+console.log(`bubbleSort ${bubbleSort(testArray)}`);

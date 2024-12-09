@@ -1,5 +1,7 @@
 function polSum(pol1, pol2) {
+    //prohodim polynomy, abych mela pol vyssiho stupne jako prvni - nemusim resit ze pol[i] neni inicializovano
     if (pol1.length > pol2.length) [pol1, pol2] = [pol2, pol1];
+
     let result = [...pol2];
     for (let i = 0; i < pol1.length; i++) {
         result[i] += pol1[i] + pol2[i];
@@ -8,7 +10,6 @@ function polSum(pol1, pol2) {
 }
 
 function countForX(pol, x) {
-    console.log(pol, x, pol.length);
     let result = 0;
     for (let i = 0; i < pol.length; i++) {
         result += pol[i] * Math.pow(x, i);

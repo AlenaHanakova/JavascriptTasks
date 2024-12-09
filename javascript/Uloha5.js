@@ -1,4 +1,4 @@
-import data from './Uloha5data.json' with {type: 'json'};
+import data from '../data/Uloha5data.json' with {type: 'json'};
 
 function filterDataByCity(city) {
     return data.filter(person => person.address.city == city);

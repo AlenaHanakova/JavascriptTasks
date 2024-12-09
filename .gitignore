@@ -1,0 +1,2 @@
+# ignore ALL .js files in the typescript directory
+typescript/*.js

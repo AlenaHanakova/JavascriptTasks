@@ -1,9 +1,9 @@
 function selectionSort(array) {
     let iMin;
-    for (let i = 0; i < array.length - 1 / 1; i++) {
+    for (let i = 0; i < array.length - 1; i++) {
         iMin = array[i];
         for (let j = i + 1; j < array.length; j++) {
-            if (array[j] < iMin) iMin = j;
+            if (array[j] < iMin) { iMin = j; }
         }
         (i != iMin) && swapTwoElementsInArray(array, i, iMin);
     }
@@ -16,7 +16,7 @@ function swapTwoElementsInArray(array, i1, i2) {
 
 function bubbleSort(array) {
     for (let i = 0; i < array.length - 1; i++) {
-        for (let j = i + 1; j < array.length; j++) {
+        for (let j = i + 1; j < array.length - i; j++) {
             (array[i] > array[j]) && swapTwoElementsInArray(array, i, j);
         }
     }
@@ -24,7 +24,7 @@ function bubbleSort(array) {
 }
 
 function mergeSort(array) {
-    if (array.length <= 1) return array;
+    if (array.length <= 1) { return array; };
     let halfIndex = Math.round(array.length / 2);
     return merge(mergeSort(array.slice(0, halfIndex)), mergeSort(array.slice(halfIndex, array.length)));
 }

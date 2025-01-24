@@ -1,3 +1,5 @@
+Typescript folder is not updated!
+
 Tasks:
 1) Switch two variabes
 2) Rotate array right
